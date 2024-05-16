@@ -1,0 +1,61 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+	Layout = "Master.cshtml";
+	
+	@* Save Picture Node value to variable: image  *@    
+	var image = Model.Value<IPublishedContent>("Billede"); 
+}
+ 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="/css/HomePage.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container">
+                @* Bootstrap row *@
+            <div class="row">
+                @* Bootstrap columns *@
+                <div class="col-md-6">
+                    <div class="Overskrift1">
+                        @* Variable that displays Content Node: Overskrift1 *@
+                        <h3>@Model.Overskrift1</h3>
+                    </div>
+                    <div class="Overskrift2">
+                        @* Variable that displays Content Node: Overskrift2 *@
+                        <h4>@Model.Overskrift2</h4>
+                    </div>
+                    <div class="Paragraf">
+                        @* Variable that displays Content Node: Paragraf1 *@
+                        <p>@Model.Paragraf1</p>
+                    </div>
+                    <div class="Paragraf">
+                        @* Variable that displays Content Node: Paragraf2 *@
+                        <p>@Model.Paragraf2</p>
+                    </div>
+                    <div class="Paragraf">
+                        @* Variable that displays Content Node: Paragraf3 *@
+                        <p>@Model.Paragraf3</p>
+                    </div>
+                </div>
+                @* Second bootstrap column *@
+                <div class="col-md-6">
+                    <div class="PictureContainer">
+                        @* Uses variable image to set selected image Url *@
+                        <img src="@image.Url()" alt="Beskrivelse af billede" class="Picture"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+</html>
+

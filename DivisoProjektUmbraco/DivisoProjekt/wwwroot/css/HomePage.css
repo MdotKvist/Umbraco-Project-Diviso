@@ -1,0 +1,31 @@
+/* First title */
+.Overskrift1{
+    margin-top:2%;
+    color:#002B4E;
+}
+
+
+/* Sub Title */
+.Overskrift2{
+    margin-top:0.2%;
+    color:#fd5819;
+}
+
+
+/* The Paragraphs */
+.Paragraf {
+color: #002b4e;
+text-align: left;
+font: normal normal normal 20px/24px Inter;
+letter-spacing: 0px;
+opacity: 1;
+}
+
+/* The Picture */
+.Picture{
+    max-width: 130%;
+    border-radius:183px;                
+    margin-left: 8%;
+    margin-top: 5%;
+}
+

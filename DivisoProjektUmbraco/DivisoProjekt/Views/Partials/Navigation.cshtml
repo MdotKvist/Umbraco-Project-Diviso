@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+
+
+@* Save visible pages under root-page as a array in the variable selection *@
+@{ var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); }
+
+@* if array selections length is larger than 0 *@
+@if (selection?.Length > 0)
+{
+    <div class="navline">
+        <nav>
+                <ul>
+                    @* Create a button for the root page (HomePage) *@
+                    <a class="navbtn" href="@Model.Root().Url()">@Model.Root().Name</a>
+                    
+                        @* Foreach page created in content *@
+                        @foreach (var item in selection)
+                        {
+                            <li>
+                                @* Lists Button of each page created under content with href link and name of page *@
+                                <a class="navbtn" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                            </li>
+                        }
+                </ul> 
+        </nav>
+    </div>
+}

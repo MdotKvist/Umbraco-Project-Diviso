@@ -1,0 +1,77 @@
+/* Header Logo */
+.Logo {
+     display: flex;
+     justify-content: center; 
+     align-items: center; 
+     height: 100%; 
+ }
+
+/* color on the nav Line */
+.navline {
+    background-color:#002b4e;
+}
+
+/* Center nav Buttons */
+.navline nav {
+  display: flex; 
+  justify-content: center; 
+  max-width: 100%;
+}
+
+/* Thickness on the ul*/
+.navline nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Make the li inline */
+.navline nav ul li {
+    display: inline-block; 
+    padding: 0.5rem 1.5rem; 
+    margin: 0; 
+}
+
+/* Button decoration */
+.navbtn {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Set min height for the body */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Fix footer to the bottom and set color */
+footer {
+    position: static; 
+    bottom: 0; 
+    width: 100%; 
+    height: auto; 
+    background-color: #D8D8D8; 
+    color: white; 
+}
+
+
+
+/* Footer text decortation */
+.footer-text {
+    color: #002b4e;
+    line-height: 80%;
+}
+
+
+/* Footer logo */
+.footer-logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.8rem;
+  width: 40%;
+}
